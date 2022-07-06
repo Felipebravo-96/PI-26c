@@ -1,0 +1,28 @@
+.filtro{
+    width: 100%;
+    max-width: 160px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 20px;
+    margin-left: 30px; 
+    position: absolute; 
+    margin-top: -1%;
+}
+
+.filtro2{
+    width: 100%;
+    max-width: 160px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 20px;
+}
+select option{
+    color: rgba(26, 25, 25, 0.603);
+    background-color:rgba(0, 0, 0, 0.121) !important;
+}
+
+

@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -25,14 +25,24 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61dafb; 
+}*/
+.fondo{
+  background-image: url('../src/imagenes/viaje4.jpg');
+  min-height: 100vh;
+  min-width: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */

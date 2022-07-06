@@ -9,15 +9,15 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     Dificultad: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.ENUM('1', '2', '3', '4', '5'),
       allowNull: false,
     },
     Duracion: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     Temporada: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM('Summer', 'Winter', 'Autumn', 'Spring'),
       allowNull: false,
     },
   },{

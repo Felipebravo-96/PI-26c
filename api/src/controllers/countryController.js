@@ -5,7 +5,7 @@ const {Country} = require("../db")
 
 async function getAllCountries(){//coge los  datos de la api y los  pushea dentro de la base de datos 
     try {
-        let countries = (await axios('https://restcountries.com/v3/all')).data.
+        let countries = (await axios('http://restcountries.com/v3/all')).data.
         map(c =>({Idc: c.cca3,
                   Nombre: c.name.common,
                   Flag: c.flag,

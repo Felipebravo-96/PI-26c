@@ -1,0 +1,13 @@
+export const ASCENDENTE = 'A-Z'
+export const DESCENDENTE = 'Z-A'
+export const ITEMS_PER_PAGE = 10;
+export const HIGH_P = 'Population High'
+export const LOW_P = 'Population Low'
+export const ALL = 'All';
+export const AFRICA = 'Africa';
+export const ASIA = 'Asia';
+export const ANTARTICA = 'Antarctica';
+export const EUROPE = 'Europe';
+export const NORTH_AMERICA = 'North America';
+export const SOUTH_AMERICA = 'South America';
+export const OCEANIA = 'Oceania';

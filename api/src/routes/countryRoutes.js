@@ -1,16 +1,26 @@
 const { Router } = require('express');
 const {getCoutryById, getCountries, getAllCountries} = require('../controllers/countryController')
 const router = Router();
-const {Country} = require('../db')
+const {Country , Activity} = require('../db')
 
 
 router.get('/', async(req,res,next) => { //ruta para buscar los datos en la base de datos y ademas filtrar por nombre
     const name = req.query.name
-    let countriesdb = await Country.findAll() 
+    let countriesdb = await Country.findAll({
+        include:{
+            model: Activity,
+            attributes:[],
+            through: {
+                attributes: [],
+            }
+        }
+    })
+    
 try {
     if(name){
         console.log(name)
-        let countryByName  =  countriesdb.filter(c => c.Nombre.toLowerCase() === name.toLowerCase())
+        let countryByName  =  countriesdb.filter(c => c.Nombre.toLowerCase().includes(name.toLowerCase())) 
+        console.log(countryByName) 
         if(countryByName.length>0){
             return res.send(countryByName)
         }else{
@@ -24,16 +34,27 @@ try {
     }   
 })
 
-router.get('/:id', async (req,res,next) => {//medio funciona ya que la validacion se bloquea pero si se  hace como se pide no  genera error y sale el pais deseaddopor id
+router.get('/:Id', async (req,res,next) => {//medio funciona ya que la validacion se bloquea pero si se  hace como se pide no  genera error y sale el pais deseaddopor id
     console.log("ruta get id funcionando")
-    const {id} = req.params
-    console.log(id)
-    let paises = await Country.findAll()
+    const {Id} = req.params
+    console.log(Id)
+    let paises = await Country.findAll(
+        {
+        include:{
+            model: Activity,
+            attributes:['Nombre', 'Duracion', 'Dificultad', 'Temporada'],
+            through: {
+                attributes: [],
+            }
+        }
+    }
+    )
     try {
         //res.send(paises[id-1])
-        let coutryById = paises.filter(c => parseInt(c.Id) === parseInt(id))
+        let coutryById = paises.filter(c => parseInt(c.Id) === parseInt(Id))
         if(coutryById.length > 0){
-             return res.send(paises[id-1])
+             //return res.send(paises[Id-1])
+             res.send(coutryById)
          }else{
             return res.status(404).send({message: `Id not found please check the entered values`})
          }
@@ -44,60 +65,19 @@ router.get('/:id', async (req,res,next) => {//medio funciona ya que la validacio
 })
 
 
-// router.get('/:id', async (req,res,next) => {
-//     console.log("ruta get id funcionando")
-//     try {
-//         const {id} = req.params
-//         console.log(id)
-//         let paises = await Country.findAll()
-//         res.send(paises[id-1])
-//         // let coutryById = paises.filter(c => c.id === id );
-//         // if(paises.includes(id) === true){
-//         //     res.send(paises[id-1])
-//         // }
-//     } catch (error) {
-//         next(error)
-//     }
-    
-// })
 
 router.post('/', (req,res,next) => {
     res.send('post en /countries')
 })
 
-router.put('/', (req,res,next) => {
-    res.send('put en /countries')
+router.put('/modify/:id', (req,res,next) => {
+
 })
 
-router.delete('/', (req,res,next) => {
-    res.send('delete en /countries')
+router.delete('/delete/:id', async (req,res,next) => {
+
+    
 })
-
-
-
-//const {Country} = require("../db")
-
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
-
-//router.use(Router.json())
-
-// router.use("/", getAllCountriesDB)
-// router.use("/:id", getCoutryById)
-// router.use("/{name}", getCoutryByName)
-
-// router.get('/:id', async (req, res, next) => {
-//     const id = req.params.id
-//     //req.body.id = parseInt(id);
-//     try {
-//         res.send(await getCoutryById(id))
-//     } catch (error) {
-//         next(error) //podria ponerse esto aca????
-//         //res.status(404).json({ error: 'Pais no encontrado' });
-//     }
-// })//estas funciones osn basicamente como la de arriba y lasllamo en routes simplemente y ya se ejecutaran
-
 
 
 module.exports = router;

@@ -1,0 +1,83 @@
+.container{
+    position: absolute;
+    width: 400px;
+    margin: auto;
+    background-color: rgb(51, 51, 51, 0.602);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-left: 40%;
+    margin-top: 10%;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium';
+    
+}
+.titulo{
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.inputs{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+}
+
+.texts{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+}
+
+.textscountries{
+  color: #fff;  
+  width: 100%;
+  margin-bottom: 20px;
+  
+  box-sizing: border-box;
+}
+
+.btn {
+    /* position: absolute; */
+    margin-left: 35%;
+    background: #eb94d0;
+
+    /* Crear degradados */
+    
+    background-image: -webkit-linear-gradient(top, #eadbe6, #2079b0);
+      background-image: -moz-linear-gradient(top, #eadbe6, #2079b0);
+      background-image: -ms-linear-gradient(top, #eadbe6, #2079b0);
+      background-image: -o-linear-gradient(top, #eadbe6, #2079b0);
+      background-image: linear-gradient(to bottom, #eadbe6, #2079b0);
+    /* Dar bordes curvados a btn */
+    
+    -webkit-border-radius: 28;
+      -moz-border-radius: 28;
+      border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+      -webkit-box-shadow: 6px 5px 24px #666666;
+      -moz-box-shadow: 6px 5px 24px #666666;
+      box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;
+      color: #fafafa;
+      font-size: 20px;
+      padding: 14px;
+      text-decoration: none;
+    }
+    .btn:hover {
+        background: #2079b0;
+        background-image: -webkit-linear-gradient(top, #2079b0, #eadbe6);
+        background-image: -moz-linear-gradient(top, #2079b0, #eadbe6);
+        background-image: -ms-linear-gradient(top, #2079b0, #eadbe6);
+        background-image: -o-linear-gradient(top, #2079b0, #eadbe6);
+        background-image: linear-gradient(to bottom, #2079b0, #eadbe6);
+        text-decoration: none;
+        cursor: pointer;
+      }
+

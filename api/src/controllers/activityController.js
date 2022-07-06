@@ -21,9 +21,9 @@ const {Country, Activity} = require("../db")
 
 //     let activitySearch = Activity.find(a => a.Nombre === Nombre)
 //     if(!activitySearch){
-//         Activity.push(activitySearch)
+//         Activity.push(newActivity)
 //     }
-// }//hasta aca va el real
+//}//hasta aca va el real
 
 
 

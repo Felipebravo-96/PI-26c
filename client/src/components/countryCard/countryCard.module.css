@@ -1,0 +1,74 @@
+.card {
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 25px;
+    height: 400px;
+    transition: all .5s ease-in-out;
+    width: 15%;
+    margin: 2vh;
+    background-color: rgba(155, 155, 155, 0.153);
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container {
+    padding: 2px 16px;
+}
+img {
+border-radius: 5px 5px 0 0;
+justify-content: center;
+object-fit: cover;
+margin-top: 20px;
+
+width: 100%;
+box-shadow: inset 0px 0px 10px rgba(0,0,0,1) !important;
+}
+
+.text{
+  text-align: center;
+}
+
+.btn {
+  /* Color del texo */
+  position: relative;
+  color: #0099CC;
+  /* Eliminar color de fondo */
+  
+  background: transparent;
+  /* Grosor del borde, estilo de línea y color */
+  
+  border: 2px solid #0099CC;
+  /* Añadir esquinas curvadas */
+  
+  border-radius: 6px;
+  /* Poner texto en mayúsculas */
+  
+  border: none;
+        color: white;
+      margin-left: 42%;
+        text-align: center;
+        display: inline-block;
+        font-size: 10px;
+        margin-bottom: 20px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+  
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  }
+  /* Al poner el curso encima (hover) */
+  
+  .btn:hover {
+        background-color: #008CBA;
+        color: white;
+   }
